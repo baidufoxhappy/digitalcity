@@ -1,0 +1,127 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>111</title>
+<style>
+    *{
+        margin:0; 
+        padding:0; 
+        list-style:none;
+    }
+    body{ 
+        font-size:12px;
+    }
+    #menu{
+        width:360px; 
+        overflow:hidden; 
+        margin:100px auto;
+        border:1px solid red;
+    }
+    #menu #nav {
+        display:block;
+        width:100%;
+        padding:0;
+        margin:0;
+        list-style:none;
+    }
+    #menu #nav li {
+        float:left;
+        width:120px;
+    }
+    #menu #nav li a {
+        display:block;
+        line-height:27px;
+        text-decoration:none;
+        padding:0 0 0 5px; 
+        text-align:center; 
+        color:#333;
+    }
+    #menu_con{ 
+        width:358px; 
+        height:135px; 
+        border-top:none
+    }
+    .tag{ 
+        padding:10px;
+         overflow:hidden;
+    }
+    .selected{
+        background:#C5A069; 
+        color:#fff;
+    }
+</style>
+</head>
+<body>
+<div id="menu">
+    <ul id="nav">
+        <li><a href="#" class="selected">商品详情</a></li>
+        <li><a href="#" class="">商品价格</a></li>
+        <li><a href="#" class="">保质期</a></li>
+    </ul>
+    <div id="menu_con">
+        <div class="tag" style="display:block">
+            这是一个商品
+         </div> 
+        <div class="tag" style="display:none">
+            一百块  
+         </div> 
+        <div class="tag"  style="display:none">
+            一年
+        </div> 
+</div>
+</div>
+<script>
+	var tabs = function(){
+    function tag(name,elem){
+        return (elem||document).getElementsByTagName(name);
+    }
+    //获得相应ID的元素
+    function id(name){
+        return document.getElementById(name);
+    }
+    function first(elem){
+        elem = elem.firstChild;
+        return elem&&elem.nodeType==1? elem:next(elem);
+    }
+    function next(elem){
+        do{
+            elem=elem.nextSibling;  
+        }while(
+            elem&&elem.nodeType!=1  
+        )
+        return elem;
+    }
+    return {
+        set:function(elemId,tabId){
+            var elem=tag("li",id(elemId));
+            var tabs=tag("div",id(tabId));
+            var listNum=elem.length;
+            var tabNum=tabs.length;
+            for(var i=0;i<listNum;i++){
+                    elem[i].onclick=(function(i){
+                        return function(){
+                            for(var j=0;j<tabNum;j++){
+                                if(i==j){
+                                    tabs[j].style.display="block";
+                                    //alert(elem[j].firstChild);
+                                    elem[j].firstChild.className="selected";
+                                }
+                                else{
+                                    tabs[j].style.display="none";
+                                    elem[j].firstChild.className="";
+                                }
+                            }
+                        }
+                    })(i)
+            }
+        }
+    }
+    }();
+        tabs.set("nav","menu_con");
+</script>
+
+
+</body>
+</html>
