@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>  
+        div.testClass{  
+            background-color:red;  
+        }  
+    </style>  
+  
+    <script type="text/javascript">  
+        function testClass(obj, active) {  
+            return obj.className.match(new RegExp('(\\s|^)' + active + '(\\s|$)'));  
+        }  
+          
+        function addClass(obj, active) {  
+            if (!this.testClass(obj, active)) obj.className += " " + active;  
+        }  
+          
+        function removeClass(obj, active) {  
+            if (testClass(obj, active)) {  
+                var reg = new RegExp('(\\s|^)' + active + '(\\s|$)');  
+                obj.className = obj.className.replace(reg, ' ');  
+            }  
+        }  
+          
+        function toggleClass(obj,active){  
+            if(testClass(obj,active)){  
+                removeClass(obj, active);  
+            }else{  
+                addClass(obj, active);  
+            }  
+        }  
+          
+        function toggleClassTest(){  
+            var obj = document. getElementById('test');  
+            toggleClass(obj,"testClass");  
+        }  
+    </script>  
+      
+    <body>  
+        <div id = "test" style = "width:250px;height:100px;">  
+            钮旭明  
+        </div>  
+        <input type = "button" value = "activeClassTest" onclick = "toggleClassTest();" />  
+    </body>  

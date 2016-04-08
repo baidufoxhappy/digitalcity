@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件捕获练习</title>
+	<style>
+		.red{
+			background-color: red;
+			width: 100px;
+			height: 100px;
+		}
+		.green{
+			background-color: green;
+			width: 200px;
+			height: 200px;
+		}
+		.yellow{
+			background-color: yellow;
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="yellow">
+		<div class="green">
+			<div class="red"></div>
+		</div> -->
+		<ul id="list">
+			<li>1 <span class="del">删除</span></li>
+			<li>2 <span class="del">删除</span></li>
+			<li>3 <span class="del">删除</span></li>
+		</ul>
+	</div>
+	<script>
+		var oUl = document.getElementById('list')
+		oUl.onclick=function(event){
+			console.log(event.target)
+			var span = event.target;
+			if(span.className == "del"){
+				oUl.removeChild(span.parentNode)
+			}
+		}
+		// var yel = document.getElementsByClassName("yellow")
+		// var gre = document.getElementsByClassName("green")
+		// var red = document.getElementsByClassName("red")
+		// yel[0].onclick=function(){
+		// 	console.log("yellow")
+		// }
+		// yel[0].addEventListener("click",function(){
+		// 	console.log("eee")
+		// })
+		// gre[0].onclick=function(){
+		// 	console.log("green")
+		// }
+		// red[0].onclick=function(){
+		// 	console.log("red")
+		// }
+	</script>
+</body>
+</html>

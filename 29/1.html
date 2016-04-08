@@ -1,0 +1,21 @@
+<style type="text/css">
+.newDiv {
+    font-weight: bold;
+}
+</style>
+
+<script>
+function clk(event) {
+    var parent = document.getElementById("parent");
+   // parent.className = parent.className + " newDiv";  //添加classname
+   parent.className = " newDiv";  //改变classname
+}
+</script>
+
+</head>
+<body>
+<input type="button" value="click" onclick="clk(event);"/>
+<div id="parent" class="google">
+    <div >child</div>
+</div>
+</body>

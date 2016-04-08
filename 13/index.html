@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<input type="text" class="box1">
+	<input type="text" class="box2">
+	<input type="text" class="box3">
+	<input type="button" class="btn1" value="+">
+	<input type="button" class="btn2" value="-">
+	<input type="button" class="btn3" value="*">
+	<input type="button" class="btn4" value="/">
+	<input type="button" class="btn5" value="C">
+	<script>
+	$(".btn1").click(function(){
+		var src1 = $(".box1").val()
+		var num1 = Number(src1)
+		var src2 = $(".box2").val()
+		var num2 = Number(src2)
+		var num3 = num1 + num2
+		$(".box3").val(num3)
+	})
+	$(".btn2").click(function(){
+		var src1 = $(".box1").val()
+		var num1 = Number(src1)
+		var src2 = $(".box2").val()
+		var num2 = Number(src2)
+		var num3 = num1 - num2
+		$(".box3").val(num3)
+	})
+	$(".btn3").click(function(){
+		var src1 = $(".box1").val()
+		var num1 = Number(src1)
+		var src2 = $(".box2").val()
+		var num2 = Number(src2)
+		var num3 = num1 * num2
+		$(".box3").val(num3)
+	})
+	$(".btn4").click(function(){
+		var src1 = $(".box1").val()
+		var num1 = Number(src1)
+		var src2 = $(".box2").val()
+		var num2 = Number(src2)
+		var num3 = num1 / num2
+		$(".box3").val(num3)
+	})
+	$(".btn5").click(function(){
+		$(".box3").val(0)
+	})
+	</script>
+</body>
+</html>

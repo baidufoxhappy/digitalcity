@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<input type="text" class="box" >
+	<input type="button" class="btn">
+	<script>
+	$(".btn").click(function(){
+		var src = $(".box").val()
+		var num = Number(src)
+		if(num>1 && num<10) {
+			alert("0<~<10")
+		}else{
+			alert("~>10")
+		}
+	})
+	</script>
+</body>
+</html>

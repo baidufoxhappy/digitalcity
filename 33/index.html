@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>递归函数</title>
+</head>
+<body>
+	<script>
+		//1、使用for循环
+		// var sum = 1;
+		// function digui(num){
+		// 	for(var i=num;i>0;i--){
+		// 		sum = sum * i
+		// 	}
+		// 	return sum
+		// }
+		// console.log(digui(5))
+		//2、使用递归函数（自己调用自己）
+		function jiecheng(num){
+			if(num == 1){
+				return 1;
+			}else{
+				return num * jiecheng(num - 1);
+			};
+		};
+		var result = jiecheng(5);
+		console.log(result);
+	</script>
+</body>
+</html>

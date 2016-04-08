@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自学钟表</title>
+	<script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<input type="text" class="hour" value="0">
+	<input type="text" class="minute" value="0">
+	<input type="text" class="second" value="0">
+	<script>
+		var hour = 0;
+		var minute = 0;
+		var second = 0;
+		function setTime1(){
+			
+			if(second>3){
+				$(".second").val("0");
+				second = 0;
+				$(".minute").val(minute)
+				minute++;
+			}else{
+				$(".second").val(second);
+			}
+			second++;
+		}
+		setInterval(setTime1,1000)
+
+		// function setTime2(){
+		// 	$(".minute").val(minute);
+		// 	minute++;
+		// }
+		// setInterval(setTime2,3000)
+	</script>
+</body>
+</html>

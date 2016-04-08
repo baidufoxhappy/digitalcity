@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js原型对象</title>
+</head>
+<body>
+	<script>
+
+		function Cat(firstName){
+			this.firstName = firstName;
+		};//编辑构造函数内容；
+		//Cat会继承其原型对象（Cat.prototype）的属性，
+		//故可通过编辑其原型修改其内容；
+		Cat.prototype = {
+			lastName:"lee",
+			sayName:function(){
+				console.log(this.firstName + this.lastName);
+			}
+		} //Cat的原型对象；
+		Cat.prototype.age = 2;//给原型对象添加属性；
+		// Cat.prototype.sayName = function(){
+		// 	console.log(this)
+		// };//给原型对象添加方法；
+		var cat = new Cat("1");//构造函数；
+		cat.sayName();//调用函数中sayName方法；
+	</script>
+</body>
+</html>

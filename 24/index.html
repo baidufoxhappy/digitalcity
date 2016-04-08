@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.1.js"></script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.time1,.time2,.time3,.time1_1,.time2_1,.time3_1{
+			float: left;
+			width: 30px;
+			display: block;
+			height: 20px;
+			text-align: right;
+		}
+		.time4{
+			float: left;
+			display: block;
+			height: 20px;
+			text-align: right;
+			width: 40px;
+		}
+		h3{
+			float: left;
+			height: 20px;
+			font-size: 16px;
+			line-height: 20px;
+		}
+		.clear{
+			clear: both;
+		}
+		.h,.m,.s,.h2,.m2,.s2{
+			margin-left: 10px;
+			float: left;
+		}
+		.num{
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="now">
+		<div class="h">
+			<input type="text" class="time1">
+			<h3>时</h3>
+			<div class="clear"></div>
+		</div>
+		<div class="m">
+			<input type="text" class="time2">
+			<h3>分</h3>
+			<div class="clear"></div>
+		</div>
+		<div class="s">
+			<input type="text" class="time3">
+			<h3>秒</h3>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="then">
+		<div class="h2">
+			<input type="text" class="time1_1">
+			<h3>时</h3>
+			<div class="clear"></div>
+		</div>
+		<div class="m2">
+			<input type="text" class="time2_1">
+			<h3>分</h3>
+			<div class="clear"></div>
+		</div>
+		<div class="s2">
+			<input type="text" class="time3_1">
+			<h3>秒</h3>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="num">
+		<input type="button" value="start" class="btn">
+		<input type="text" class="time4">
+		<h3>秒</h3>
+		<div class="clear"></div>
+	</div>
+	<script>
+		function setTime1(){
+			var timeNow = new Date();
+			var h = timeNow.getHours();
+			var m = timeNow.getMinutes();
+			var s = timeNow.getSeconds();
+			$(".time1").val(h)
+			$(".time2").val(m)
+			$(".time3").val(s);
+		}
+		setTime1()
+		setInterval(setTime1,1000);
+		$(".btn").click(function(){
+			function setTime2(){
+				var timeNow = new Date();
+				var h = timeNow.getHours();
+				var m = timeNow.getMinutes();
+				var s = timeNow.getSeconds();
+				var h2 = $(".time1_1").val()
+				var m2 = $(".time2_1").val()
+				var s2 = $(".time3_1").val();
+				var num1 = Number(h2)
+				var num2 = Number(m2)
+				var num3 = Number(s2)
+					var h3 = 3600*(num1-h)
+					var m3 = 60*(num2-m)
+					var s3 = num3 - s
+				if(h3<0){
+					$(".time4").val("false")
+				}else{
+					var num = h3 + m3 + s3
+					$(".time4").val(num)
+				}	
+			}
+			setTime2();
+			setInterval(setTime2,1000);	
+		})
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.1-beta1/jquery.js"></script>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		.li-1{
+			width: 200px;
+			height: 360px;
+			float: left;
+			list-style: none;
+			font-size: 40px;
+		}
+		a{
+			width: 198px;
+			height: 58px;
+			color: white;
+			background-color: black;
+			border: 1px solid white;
+			display: block;
+			line-height: 58px;
+			text-align: center;
+		}
+		.li-2{
+			text-align: center;
+			background-color: black;
+			color: white;
+			height: 98px;
+			width: 198px;
+			border: 1px solid white;
+			line-height: 98px;
+			font-size: 40px;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<ul class="ul-1">
+		<li class="li-1">
+			<a>衣服</a>
+			<ul class="ul-2">
+				<li class="li-2">耐克</li>
+				<li class="li-2">李宁</li>
+				<li class="li-2">嘿嘿</li>
+			</ul>
+		</li>
+		<li class="li-1">
+			<a>玩具</a>
+			<ul class="ul-2">
+				<li class="li-2">火箭</li>
+				<li class="li-2">玩具枪</li>
+				<li class="li-2">飞机</li>
+			</ul>
+		</li>
+		<li class="li-1">
+			<a>用品</a>
+			<ul class="ul-2">
+				<li class="li-2">水杯</li>
+				<li class="li-2">笔</li>
+				<li class="li-2">橡皮</li>
+			</ul>
+		</li>
+	</ul>
+	<script>
+		$(".ul-2").hide()
+		$("a").mouseenter(function(){
+			$(this).siblings(".ul-2").stop().slideDown(500)
+		})
+		$("a").mouseleave(function(){
+			$(this).siblings(".ul-2").stop().slideUp(500)
+		})
+	</script>
+</body>
+</html>

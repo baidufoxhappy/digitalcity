@@ -1,0 +1,32 @@
+g<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>调用闭包内部元素</title>
+</head>
+<body>
+	<script>
+		var c = (function(){
+			var num1 = 20;
+			var num2 = 30;
+			var sign = "+";
+			var number = Math.random();
+			function count(num1,num2,sign){
+				switch(sign){
+					case "+":return num1 + num2;
+					case "-":return num1 - num2;
+					case "*":return num1 * num2;
+					case "/":return num1 / num2;
+				}
+			}
+			return {
+				num_1:num1,
+				num_2:num2,
+				sign_:sign,
+				count_:count,
+			}
+		})()
+		console.log(c.count_(c.num_1,c.num_2,c.sign_))
+	</script>
+</body>
+</html>

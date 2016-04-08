@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<input type="text" class="time1">
+	<input type="text" class="time2">
+	<input type="text" class="time3">
+	
+	<script>
+	function setTime(){
+		var timeNow = new Date();
+		var h = timeNow.getHours();
+		var m = timeNow.getMinutes();
+		var s = timeNow.getSeconds();
+		$(".time1").val(h)
+		$(".time2").val(m)
+		$(".time3").val(s)
+	}
+	setTime();
+	setInterval(setTime,1000)
+	</script>
+</body>
+</html>

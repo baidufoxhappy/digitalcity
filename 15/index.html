@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<input type="text" class="box1">
+	<input type="text" class="box2">
+	<input type="button" class="btn">
+	<script>
+	$(".btn").click(function(){
+		var src = $(".box1").val()
+		var num1 = Number(src)
+		var add = 0
+		for(var i = 0;i<100;i++){
+			var add = add + i
+		}
+		$(".box2").val(add)
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" class="btn" value="1">
+	<input type="button" class="btn" value="2">
+	<input type="button" class="btn" value="3">
+	<input type="type" class="box">
+	<script>
+	var btn = document.getElementsByClassName('btn')
+	var box = document.getElementsByClassName('box')
+	for(var i=0;i<btn.length;i++){
+		btn[i].onclick=function(){
+			var vbtn = this.value
+			box[0].value = vbtn
+		}
+	}
+	</script>
+</body>
+</html>

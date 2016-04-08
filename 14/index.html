@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<input type="text" class="box1">
+	<input type="text" class="box2">
+	<input type="text" class="box3">
+	<input type="text" class="box4">
+	<input type="button" class="btn1" value="=">
+	<input type="button" class="btn2" value="C">
+	<script>
+	$(".btn1").click(function(){
+		var src1 = $(".box1").val()
+		var src2 = $(".box2").val()
+		var num1 = Number(src1)
+		var num2 = Number(src2)
+		var src3 = $(".box3").val()
+		//1、利用if求运算结果
+		if(src3=="+"){
+			$(".box4").val(num1+num2)
+		}
+		if(src3=="-"){
+			$(".box4").val(num1-num2)
+		}
+		if(src3=="*"){
+			$(".box4").val(num1*num2)
+		}
+		if(src3=="/"){
+			$(".box4").val(num1/num2)
+		}
+		//2、利用switch求运算结果
+		// switch(src3){
+		// 	case "+" : $(".box4").val(num1+num2);break;
+		// 	case "-" : $(".box4").val(num1-num2);break;
+		// 	case "*" : $(".box4").val(num1*num2);break;
+		// 	case "/" : $(".box4").val(num1/num2);break;
+		// }
+	})
+	$(".btn2").click(function(){
+		$(".box4").val(0)
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.1-beta1/jquery.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style-type: none;
+		}
+		li{
+			float: left;
+			margin-left: 20px;
+		}
+		.img-1{
+			width: 100px;
+			height: 100px;
+		}
+		.img{
+			position:absolute;
+			border:1px solid #ccc;
+			background:#333;
+			padding:2px;
+			display:none;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="1.JPG"><img class="img-1" src="1.JPG" alt=""></a></li>
+		<li><a href="2.JPG"><img class="img-1" src="2.JPG" alt=""></a></li>
+		<li><a href="3.JPG"><img class="img-1" src="3.JPG" alt=""></a></li>
+		<li><a href="4.JPG"><img class="img-1" src="4.JPG" alt=""></a></li>
+	</ul>
+	<script type="text/javascript">
+		$("li").mouseenter(function(){//鼠标进入时
+			var src = $(this).find("img").attr("src");//找到图片路径
+			var srcs = "<img class='img' src='"+ src +"'>";//定义放大图片标签
+			$("body").append(srcs);//添加放大图片标签
+			$(".img").show("fast");
+		})
+		.mousemove(function(event){
+			$(".img").css({
+				"top": (event.pageY+10) + "px",
+				"left":  (event.pageX+20) + "px"
+				})
+			$("#x").text(event.pageX+10);
+			$("#y").text(event.pageY+20);
+		})
+		.mouseleave(function(){//鼠标离开时
+			$(".img").remove();
+			})
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuary添加删除节点</title>
+	<script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加节点">
+	<ul id="list">
+		<li>1 <span class="del">删除</span></li>
+		<li>2 <span class="del">删除</span></li>
+		<li>3 <span class="del">删除</span></li>
+	</ul>
+	<input type="button" id="ceshi" value="测试">
+	<input type="button" id="one" value="1">
+	<script>
+		$("#btn").click(function(){
+			var val = $("#txt").val();
+			var $li = $("<li></li>");//创建li节点；
+			var $span = $("<span class='del'> 删除</span>");//创建span节点；
+			$li.prepend(val);//在li前部添加val；
+			$li.append($span);//在li后部添加span；
+			$("#list").append($li);//在ul中添加li；776 
+		});
+		$("#list").delegate(".del","click",function(){//"操作节点","操作方法","操作内容"；
+			$(this).parent().remove();//this指"操作节点"，即".del"；
+		})
+		$("#ceshi").bind("click nouseenter mouseleave",function(){
+			// console.log("nihao");
+		});
+		$("#one").one("click",function(){
+			// console.log("我只触发一次");
+		})
+		$("#list li").each(function(index,element){
+			// console.log(index);
+			// console.log(element);
+		});
+		var arr = [1,2,3,4,5];
+		$.each(arr,function(index,element){
+			// console.log(index);
+			// console.log(element);
+		});
+		var $obj = $("#list li");
+		$.each($obj,function(index,element){
+			// console.log(index);
+			// console.log(element);
+		});
+	</script>
+</body>
+</html>

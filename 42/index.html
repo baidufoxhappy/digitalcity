@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>回调函数简例</title>
+</head>
+<body>
+	<script>
+		var value = 100;
+		function setValue(callback){
+			setTimeout(function(){
+				value++;
+				callback();//调用形参代表的函数；
+			},1000)
+		};
+		function get(){
+			console.log(value)
+		};
+		setValue(get);//将函数get作为实参传递给函数setValue；
+		//处理异步方法
+	</script>
+</body>
+</html>

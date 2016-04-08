@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>去除重复</title>
+</head>
+<body>
+	<script>
+		var box = [1,2,2,2,3,3,3,4,4,5,5,6,6];
+		var obj = {};
+		//去重函数
+		
+		function getRemove(arr){
+			for(var i=0;i<arr.length;i++){
+				if(obj[arr[i]] == undefined){//如果obj的该属性不存在，
+					obj[arr[i]] = 1;//则任意赋给其某值，使该属性存在，
+					for(var i in arr){
+						console.log(arr[i])//输出该属性，
+					}
+				}else{
+					getRemove();//否则继续执行该函数。
+				}
+			}
+			return arr[i];
+		}
+		
+		getRemove(box);
+	</script>
+</body>
+</html>

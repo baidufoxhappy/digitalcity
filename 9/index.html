@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.1-beta1/jquery.js"></script>
+	<style>
+	.view{
+		width: 100px;
+		height: 50px;
+		overflow: hidden;
+	}
+	.box{
+		width: 100px;
+		height: 100px;
+	}
+	.up{
+		width: 100px;
+		height: 50px;
+		background-color: red;
+	}
+	.down{
+		width: 100px;
+		height: 50px;
+		background-color: green;
+	}
+	</style>
+</head>
+<body>
+	<div class="view">
+		<div class="box">
+			<div class="up" id="box-in"></div>
+			<div class="down" id="box-in"></div>
+		</div>
+	</div>
+	<script>
+	$(".view").mousemove(function(){
+			var index = $(this).find("#box-in").index()
+			var l = -50*index
+			alert(l)
+			// $(".box").animate({"margin-top":l},500)
+		})
+	</script>
+</body>
+</html>

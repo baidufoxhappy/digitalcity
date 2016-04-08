@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js替代jQuary</title>
+	<style>
+		.red{
+			background-color: red;
+		}
+		.num{
+			display: block;
+			width: 20px;
+			height: 20px;
+			list-style: none;
+			float: left;
+			border: 1px #ccc solid;
+			text-align: center;
+			line-height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="pic"><img src="1.jpg" id="pic" alt=""></div>
+	<ul>
+		<li class="num">1</li>
+		<li class="num">2</li>
+		<li class="num">3</li>
+		<li class="num">4</li>
+	</ul>
+	<script>	
+		var arrUrl = ["1.jpg","2.jpg","3.jpg","4.jpg"]
+		var oImg = document.getElementById('pic')
+		var aNum = document.getElementsByClassName('num')
+		for(var i=0;i<aNum.length;i++){
+			aNum[i].onclick=function(){
+				oImg.src = arrUrl[index(this)]
+				addClass(this,"red");
+				var arr = siblings(this);
+				for(var i=0;i<arr.length;i++){
+					removeClass(arr[i],"red");
+				}
+			}
+		}
+		function index1(element){
+			var arr = element.parentNode.children
+			for(var i=0;i<arr.length;i++){
+				if(arr[i] == element){
+					return i;
+				}
+			}
+		}
+		function siblings(node){
+			var allNode = node.parentNode.children;//找到所有同级元素，
+			var arrNode = [];//建立空数组
+			for(var i=0;i<allNode.length;i++){
+				if(allNode[i] != node){//如果该元素不是node，即为node的同级元素，
+					arrNode.push(allNode[i])//则输出这个元素。
+				}
+			}
+			return arrNode;
+		}
+		function addClass(element,active){//给element添加class名active，
+			element.className = element.className + " " + active;//将（初始class名+空格+添加名active）赋值给最终class名。
+		}
+		function removeClass(element,remove){//给element删除class名remove，
+			var Rstr = element.className;//获取字符串（element的class名），
+			var Rarr = Rstr.split(" ");//将字符串Rstr变为数组Rarr,用空格分开，
+			var Narr = [];//建立空数组，作为输出集合，
+			for(var i=0;i<Rarr.length;i++){
+				if(Rarr[i] != remove){//如果该元素（数组中的第i个元素）不是要删掉的remove，
+					Narr.push(Rarr[i]);//则将该元素输出到空数组Narr中，
+					
+				}
+			}
+			var newRstr = Narr.join( );//将数组Narr变为字符串，
+			element.className = newRstr;//将字符串赋值给最终class名。
+		}
+		function index(node){
+			var allNode = node.parentNode.children; //找到所有同级元素，
+			for(var i=0;i<allNode.length;i++){
+				if(allNode[i] == node){//某个元素是node时，
+					return i //输出i即为index值。
+				}
+			}
+		}
+	</script>
+</body>
+</html>

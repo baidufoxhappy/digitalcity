@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>抽奖（obj方法）</title>
+</head>
+<body>
+	<input type="button" id="btn">
+	<script>
+		var oBtn = document.getElementById('btn')
+		var nameList = ["李雷","韩梅梅","Lily","Lucy","小红","小明","小刚","小亮"];
+		var obj = {};//建立空对象，作为比较集合；
+		function getName(){
+			var num = Math.floor(Math.random() * nameList.length)//获取数组中第num个元素，random为数组元素个数分之一，乘以数组个数，即为第num个元素；
+			if(obj[nameList[num]] == undefined){//如果obj中无该元素，即还未抽到此人，
+				obj[nameList[num]] = 1;//给该对象任意赋值，使其在回调时不会判断为undefined；
+				console.log(nameList[num])//输出该元素，
+			}else{//若已抽到该人，
+				getName();//则继续执行函数。
+			}
+		}
+		//该方法利用空对象作为比较值的承载集合，利用判断该对象中属性值是否存在的方法，间接判断数组中某元素是否出现过，若出现过，即该人未被抽过，则obj中无该人属性值，即undefined，所以输出该人。
+		oBtn.onclick = function(){
+			getName();
+		}
+	</script>
+</body>
+</html>

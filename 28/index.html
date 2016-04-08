@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js编写计算器</title>
+</head>
+<body>
+	<div>
+		<input type="text" id="num">
+		<input type="text" id="res"><br><br>
+		<input type="button" value="0" class="str">
+		<input type="button" value="1" class="str">
+		<input type="button" value="2" class="str">
+		<input type="button" value="3" class="str">
+		<input type="button" value="4" class="str">
+		<input type="button" value="5" class="str">
+		<input type="button" value="6" class="str">
+		<input type="button" value="7" class="str">
+		<input type="button" value="8" class="str">
+		<input type="button" value="9" class="str"><br><br>
+		<input type="button" value="+" class="idea">
+		<input type="button" value="-" class="idea">
+		<input type="button" value="*" class="idea">
+		<input type="button" value="/" class="idea">
+		<input type="button" value="C" class="clear">
+		<input type="button" value="=" class="result">
+	</div>
+	
+	<script>
+			var num1 = '';
+			var num2 = '';
+			var sign = '';
+			var result = '';
+			var str = document.getElementsByClassName("str")
+			var oIdea = document.getElementsByClassName("idea")
+			var oResult = document.getElementsByClassName("result")
+			var oClear = document.getElementsByClassName("clear")
+			var oNum = document.getElementById("num")
+			var oRes = document.getElementById("res")
+			for(var i=0;i<str.length;i++){
+				str[i].onclick = function(){
+					var num = this.value
+					if(sign ==""){
+						num1 = num1 + num
+					oNum.value = num1
+					}else{
+						num2 = num2 + num
+					oNum.value = num2
+					}
+				}
+			}
+			for(var i=0;i<oIdea.length;i++){
+				oIdea[i].onclick = function(){
+					sign = this.value;
+				}
+			}
+			oResult[0].onclick= function(){
+				var number1 = Number(num1)
+				var number2 = Number(num2)
+				switch(sign){
+					case "+" : result = number1 + number2;break;
+					case "-" : result = number1 - number2;break;
+					case "*" : result = number1 * number2;break;
+					case "/" : result = number1 / number2;break;
+				}
+				oRes.value=result
+			}
+			oClear[0].onclick= function(){
+			 	num1 = '';
+			 	num2 = '';
+			 	sign = '';
+			 	result = '';
+			 	oNum.value=""
+			}
+	</script>
+</body>
+</html>

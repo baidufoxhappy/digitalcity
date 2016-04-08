@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<input type="text" class="box" value="0">
+	<input type="button" class="btn1" value="加">
+	<input type="button" class="btn2" value="减">
+	<script>
+	$(".btn1").click(function(){
+		var src1 = $(".box").val()
+		var num1 = Number(src1) + 1
+		$(".box").val(num1)
+	})
+	$(".btn2").click(function(){
+		var src2 = $(".box").val()
+		var num2 = Number(src2) - 1
+		if(num2<0){
+			$(".box").val(0)
+		}else{
+			$(".box").val(num2)
+		}
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件捕获实例</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn">
+	<ul id="list">
+		<li>1 <span class="del">删除</span></li>
+		<li>2 <span class="del">删除</span></li>
+		<li>3 <span class="del">删除</span></li>
+	</ul>
+	<script>
+		var oTxt = document.getElementById("txt")
+		var oBtn = document.getElementById("btn")
+		var oList = document.getElementById("list")
+		var aDel = document.getElementsByClassName("del")
+		oBtn.onclick=function(){
+			var val = oTxt.value;
+			var liNode = document.createElement("li");//创建属性节点
+			var textNode = document.createTextNode(val);//创建文本节点
+			var spanNode = document.createElement("span");
+			var textSpanNode = document.createTextNode(" 删除");
+			spanNode.className += "del";
+			liNode.appendChild(textNode);//给liNode添加文本节点，即输入内容；
+			oList.appendChild(liNode);//给oList添加属性节点，即新li标签；
+			spanNode.appendChild(textSpanNode);//给spanNode添加文本节点，即“删除”；
+			liNode.appendChild(spanNode);//给liNode添加属性节点，即span标签。
+		}
+		oList.onclick=function(event){//事件捕获，
+			var span = event.target;//获取最下级元素，
+			if(span.className == "del"){//如果最下级元素class名为del，
+				oList.removeChild(span.parentNode)//删除ul中span标签的父级，即所在的li。
+			}
+		}
+		
+	</script>
+</body>
+</html>

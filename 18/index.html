@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuary编写计算器</title>
+</head>
+<body>
+	<input type="text" id="num">
+	<input type="text" id="res"><br><br>
+	<input type="button" value="0" class="str">
+	<input type="button" value="1" class="str">
+	<input type="button" value="2" class="str">
+	<input type="button" value="3" class="str">
+	<input type="button" value="4" class="str">
+	<input type="button" value="5" class="str">
+	<input type="button" value="6" class="str">
+	<input type="button" value="7" class="str">
+	<input type="button" value="8" class="str">
+	<input type="button" value="9" class="str"><br><br>
+	<input type="button" value="+" class="idea">
+	<input type="button" value="-" class="idea">
+	<input type="button" value="*" class="idea">
+	<input type="button" value="/" class="idea">
+	<input type="button" value="C" class="clear">
+	<input type="button" value="=" class="result">
+
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+				var num1 = '';
+				var num2 = '';
+				var sign = '';
+				var result = '';
+			$('.str').click(function() {
+				var num = $(this).val();
+				if(sign ==""){
+					num1 = num1 + num
+					$("#num").val(num1)
+				}else{
+					num2 = num2 + num
+					$("#num").val(num2)
+				}
+			});
+			$(".idea").click(function(){
+				sign = $(this).val()
+			})
+			$(".result").click(function(){
+				var number1 = Number(num1)
+				var number2 = Number(num2)
+				switch(sign){
+					case "+" : result = number1 + number2;break;
+					case "-" : result = number1 - number2;break;
+					case "*" : result = number1 * number2;break;
+					case "/" : result = number1 / number2;break;
+				}
+				$("#res").val(result)
+			})
+			$(".clear").click(function(){
+			 	num1 = '';
+			 	num2 = '';
+			 	sign = '';
+			 	result = '';
+			 	$("#num").val("")
+			})
+	</script>
+</body>
+</html>

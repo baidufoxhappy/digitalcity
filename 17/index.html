@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<script>
+		//1、定义函数，输出函数值
+		function f(x,y){
+			var result = 3 * x + 4 * y;
+			return result;
+		}
+		// console.log(f(3,4))
+		//2、对象中某一个属性为一个函数，则该属性为对象的方法
+		//   即eat是dog的方法
+		var dog = {
+			name:"钮旭明",
+			age:"13",
+			// eat:function(food){
+			// 	// console.log(food)
+			// },
+			sayName:function(read){
+				console.log(read)
+			}
+		}
+		dog.sayName("reading")
+
+	</script>
+</body>
+</html>

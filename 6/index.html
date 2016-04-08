@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.1-beta1/jquery.js"></script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.view{
+			width: 400px;
+			height: 400px;
+			overflow: hidden;
+			}
+			.box{
+				width: 1600px;
+			}
+			.img1{
+			width: 400px;
+			height: 400px;
+			background-color: red;
+			float: left;
+			}
+			.img2{
+			width: 400px;
+			height: 400px;
+			background-color: black;
+			float: left;
+			}
+			.img3{
+			width: 400px;
+			height: 400px;
+			background-color: blue;
+			float: left;
+			}
+			.img4{
+			width: 400px;
+			height: 400px;
+			background-color: yellow;
+			float: left;
+		}
+		.btn{
+			position: absolute;
+			left: 260px;
+			top: 350px;
+			}
+			.btn-1{
+				float: left;
+				display: block;
+				width: 30px;
+				height: 30px;
+			}
+	</style>
+</head>
+<body>
+	<div class="view">
+		<div class="box">
+			<div class="img1">
+				<img src="images/9HWZZKM4`70XL6ZV`(_N(`R.jpg" alt="">
+			</div>
+			<div class="img2">
+				<img src="images/5ILAV`Q3F11~[}}6}MM}HU6.png" alt="">
+			</div>
+			<div class="img3">
+				<img src="images/5M7B[]A3_B`5)BHM7J@I9F7.jpg" alt="">
+			</div>
+			<div class="img4">
+				<img src="images/PO`N01{DOF~%M6SEFFNZO~2.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="btn">
+		<input type="button" class="btn-1" value="1">
+		<input type="button" class="btn-1" value="2">
+		<input type="button" class="btn-1" value="3">
+		<input type="button" class="btn-1" value="4">
+	</div>
+	<script>
+		$(".btn-1").click(function(){
+			var index = $(this).index()
+			var l = -400*index
+			$(".box").animate({"margin-left":l},500)
+		})
+	</script>
+</body>
+</html>

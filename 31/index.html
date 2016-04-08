@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 
+		function outfun(){
+			function infun1(){
+				console.log("1")
+			}
+			function infun2(){
+				console.log("2")
+			}
+			return [infun1,infun2];
+		}
+		outfun()[0]();//调用outfun中的第一个（[0]）函数infun1；
+	</script>
+</body>
+</html>

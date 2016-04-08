@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+	<input type="text" class="box">
+	<input type="button" class="btn" value="=">
+	<input type="button" class="btn0" value="C">
+	<div>
+		<input type="button" class="btn1" value="1">
+		<input type="button" class="btn1" value="2">
+		<input type="button" class="btn1" value="3">
+		<input type="button" class="btn1" value="4">
+		<input type="button" class="btn1" value="5">
+	</div>
+	<input type="button" class="btn6" value="+">
+	<input type="button" class="btn7" value="-">
+	<input type="button" class="btn8" value="*">
+	<input type="button" class="btn9" value="/">
+	<script>
+	$(".btn0").click(function(){
+		$(".box").val(0)
+	})
+	var text = ""
+	$(".btn1").click(function(){
+		var str = $(".btn1").val()
+		var text = str + text
+		var num = Number(text)
+		$(".box").val(text)
+	})
+	</script>
+</body>
+</html>
