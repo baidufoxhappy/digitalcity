@@ -207,6 +207,33 @@
 							color: #999999;
 							border: 1px solid #999999;
 						}
+						#lxrb-nan,#lxrb-nv{
+							width: 90px;
+							height: 42px;
+							line-height: 42px;
+							font-size: 18px;
+							float: left;
+						}
+						#lxrb-nan input{
+							display: block;
+							width: 20px;
+							height: 20px;
+							float: left;
+							margin-top: 13px;
+							margin-right: 4px;
+						}
+						#lxrb-nv input{
+							display: block;
+							width: 20px;
+							height: 20px;
+							float: left;
+							margin-top: 13px;
+							margin-right: 4px;
+						}
+						.lxrb-xb{
+							height: 42px;
+							margin-bottom: 22px;
+						}
 			.youke{
 				width: 1000px;
 				height: 519px;
@@ -273,9 +300,25 @@
 									width: 66px;
 									margin-right: 20px;
 								}
+									.ykmr-left input{
+										display: block;
+										width: 20px;
+										height: 20px;
+										float: left;
+										margin-top: 4px;
+										margin-right: 4px;
+									}
 								.ykmr-right{
 									float: left;
 								}
+									.ykmr-right input{
+										display: block;
+										width: 20px;
+										height: 20px;
+										float: left;
+										margin-top: 4px;
+										margin-right: 4px;
+									}
 								#input-ykmr{
 									width: 196px;
 									height: 37px;
@@ -418,7 +461,7 @@
 								font-size: 18px;
 								float: left;
 							}
-							.ydmr-shi,.ydmr-fou{
+							#ydmr-shi,#ydmr-fou{
 								width: 90px;
 								height: 42px;
 								line-height: 42px;
@@ -544,7 +587,14 @@
 					</div>
 					<div class="lxrb-right">
 						<input type="text" value="请输入姓名">
-						<input type="text" value="">
+						<div class="lxrb-xb">
+							<div id="lxrb-nan">
+								<input type="radio" name="ydmr" value="1">男
+							</div>
+							<div id="lxrb-nv">
+								<input type="radio" name="ydmr">女
+							</div>
+						</div>
 						<input type="text" value="请输入手机号码">
 						<input type="text" value="请输入邮箱">
 					</div>
@@ -568,19 +618,19 @@
 						<div class="ykm-right">
 							<div class="ykmr">
 								<div class="ykmr-left">
-									<input type="radio"> 成人
+									<input type="radio" name="ykmr" value="1"> 成人
 								</div>
 								<div class="ykmr-right">
-									<input type="radio"> 儿童
+									<input type="radio" name="ykmr"> 儿童
 								</div>
 							</div>
 							<div class="ykmr"></div>
 							<div class="ykmr">
 								<div class="ykmr-left">
-									<input type="radio"> 男
+									<input type="radio" name="ykmr" value="1"> 男
 								</div>
 								<div class="ykmr-right">
-									<input type="radio"> 女
+									<input type="radio" name="ykmr"> 女
 								</div>
 							</div>
 							<div class="ykmr">
@@ -600,7 +650,7 @@
 					<a href="#">详情></a>
 				</div>
 				<div class="bx-mid">
-					<input type="checkbox">
+					<input type="checkbox" name="bx" value="1">
 					<ul>
 						<li class="li-bxd-left">平安爱自驾境外长线保险</li>
 						<li class="li-bxd-mid">经典型2份</li>
@@ -608,7 +658,7 @@
 					</ul>
 				</div>
 				<div class="bx-but">
-					<input type="checkbox">
+					<input type="checkbox" name="bx">
 					<ul>
 						<li class="li-bxd-left">平安爱自驾境外长线保险</li>
 						<li class="li-bxd-mid">经典型2份</li>
@@ -630,11 +680,11 @@
 					<div class="ydm-right">
 						<div class="ydmr-xx">
 							<div class="ydmr-shifou">是否需要发票：</div>
-							<div class="ydmr-shi">
-								<input type="radio">是
+							<div id="ydmr-shi">
+								<input type="radio" name="ydmr" value="1">是
 							</div>
-							<div class="ydmr-fou">
-								<input type="radio">否
+							<div id="ydmr-fou">
+								<input type="radio" name="ydmr">否
 							</div>
 						</div>
 						<input type="text" id="input-tt" value="请输入发票抬头"><br>
