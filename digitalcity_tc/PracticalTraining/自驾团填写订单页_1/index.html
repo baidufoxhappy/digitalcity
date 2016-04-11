@@ -15,16 +15,102 @@
 			margin: 0 auto;
 			position: relative;
 		}
-		.position{
-			width: 234px;
-			height: 355px;
-			padding: 18px;
-			background-color: red;
-			position: absolute;
-			top: 0;
-			right: 0;
-			border: 1px solid #66cccc;
-		}
+			.position{
+				width: 234px;
+				height: 355px;
+				padding: 18px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				border: 1px solid #66cccc;
+				background-color: white;
+			}
+				.p-dingdan{
+					width: 210px;
+					height: 24px;
+					font-size: 18px;
+					line-height: 24px;
+				}
+				.p-fangjian{
+					width: 234px;
+					height: 98px;
+					border-top: 1px solid #cccccc;
+					border-bottom: 1px solid #cccccc;
+					margin-top: 16px;
+				}
+					.pfj-chengren{
+						width: 234px;
+						height: 49px;
+						font-size: 16px;
+						line-height: 49px;
+					}
+					.pfj-fangjian{
+						width: 234px;
+						height: 49px;
+						font-size: 16px;
+						line-height: 49px;
+					}
+					.pfj-num{
+						width: 20px;
+						height: 20px;
+						line-height: 20px;
+						font-size: 16px;
+						float: right;
+						margin-top: 16px;
+						margin-right: 166px;
+					}
+				.p-yiwai{
+					height: 54px;
+					width: 234px;
+					line-height: 54px;
+					font-size: 16px;
+				}
+				.p-youhui{
+					width: 234px;
+					height: 54px;
+					line-height: 54px;
+					font-size: 16px;
+					border-top: 1px dashed #cccccc;
+					border-bottom: 1px dashed #cccccc;
+				}
+					.p-youhui span{
+						color: #66cccc;
+					}
+				.p-zongji{
+					width: 234px;
+					height: 122px;
+					line-height: 122px;
+					font-size: 16px;
+					color: #999999;
+				}
+					.pzj-num{
+						width: 77px;
+						height: 30px;
+						margin-top: 55px;
+						margin-right: 8px;
+						float: right;
+					}
+						#span-pz-left{
+							font-size: 16px;
+							color: #ff6633;
+							display: block;
+							height: 20px;
+							line-height: 20px;
+							width: 14px;
+							float: left;
+							text-align: center;
+							margin-top: 5px;
+						}
+						#span-pz-right{
+							font-size: 24px;
+							color: #ff6633;
+							display: block;
+							height: 24px;
+							line-height: 24px;
+							width: 60px;
+							float: left;
+							text-align: center;
+						}
 			.xianlu{
 				width: 1000px;
 				height: 438px;
@@ -137,6 +223,44 @@
 							.h3-right span{
 								color: #66cccc;
 							}
+					.xll-but{
+						height: 54px;
+						width: 680px;
+						padding: 26px;
+						font-size: 18px;
+					}
+						.xll-but input{
+							display: block;
+							width: 22px;
+							height: 22px;
+							float: left;
+							margin-right: 20px;
+						}
+						.xllb-top{
+							width: 680px;
+							height: 22px;
+						}
+							.xllbt-left{
+								width: 140px;
+								height: 22px;
+								float: left;
+							}
+								.xllbt-left span{
+									color: #66cccc;
+								}
+							.xllbt-right{
+								width: 540px;
+								height: 22px;
+								float: left;
+								line-height: 22px;
+							}
+						.xllb-but{
+							width: 540px;
+							height: 22px;
+							margin-top: 10px;
+							padding-left: 140px;
+							line-height: 22px;
+						}
 			.feiyong{
 				width: 1000px;
 				height: 349px;
@@ -304,13 +428,32 @@
 							.ykmr{
 								width: 420px;
 								height: 30px;
-								margin-bottom: 24px;
+								margin-bottom: 26px;
 							}
 								.ykmr-left{
 									float: left;
 									width: 66px;
 									margin-right: 20px;
 								}
+									#yuyan,#zhengjian{
+										width: 70px;
+										height: 39px;
+										display: block;
+										font-size: 16px;
+										padding-left: 8px;
+										color: #666666;
+										float: left;
+									}
+									#xx,#yy{
+										width: 196px;
+										height: 37px;
+										border: 1px solid #999999;
+										font-size: 16px;
+										padding-left: 14px;
+										color: #999999;
+										float: left;
+										margin-left: 20px;
+									}
 									.ykmr-left input{
 										display: block;
 										width: 20px;
@@ -532,7 +675,7 @@
 				margin-top: 48px;
 				border-top: 1px solid #999999;
 			}
-				.tijiao input{
+				.tj-zongjia{
 					display: block;
 					width: 984px;
 					height: 54px;
@@ -543,6 +686,11 @@
 					line-height: 54px;
 					padding-left: 10px;
 				}
+					.tj-num{
+						width: 26px;
+						height: 26px;
+						float: left;
+					}
 				.queren{
 					width: 237px;
 					height: 120px;
@@ -581,7 +729,30 @@
 <body>
 	<div class="main">
 		<div class="main-inner">
-			<div class="position"></div>
+			<div class="position">
+				<div class="p-dingdan">
+					订单信息
+				</div>
+				<div class="p-fangjian">
+					<div class="pfj-chengren">成人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 X ￥5280</div>
+					<div class="pfj-fangjian">房间 x 
+						<div class="pfj-num">1</div>
+					</div>
+				</div>
+				<div class="p-yiwai">
+					意外旅游险&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 x ￥120
+				</div>
+				<div class="p-youhui">
+					优惠金额<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-￥0</span>
+				</div>
+				<div class="p-zongji">
+					总计
+					<div class="pzj-num">
+						<span id="span-pz-left">￥</span>
+						<span id="span-pz-right">5400</span>
+					</div>
+				</div>
+			</div>
 			<div class="xianlu">
 				<div class="xianlu-left">
 					<div class="xll-top">
@@ -617,7 +788,21 @@
 							</div>
 						</div>
 					</div>
-
+					<div class="xll-but">
+						<div class="xllb-top">
+							<div class="xllbt-left">
+								是否同意拼房<span>*</span>：
+							</div>
+							<div class="xllbt-right">
+								<input type="radio" name="1" value="2" checked>
+								同意拼房
+							</div>
+						</div>
+						<div class="xllb-but">
+							<input type="radio" name="1">
+							不同意拼房,愿意支付房差费用￥3500
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="feiyong">
@@ -651,10 +836,10 @@
 						<input type="text" value="请输入姓名">
 						<div class="lxrb-xb">
 							<div id="lxrb-nan">
-								<input type="radio" name="ydmr" value="1" checked>男
+								<input type="radio" name="yd" value="1" checked>男
 							</div>
 							<div id="lxrb-nv">
-								<input type="radio" name="ydmr">女
+								<input type="radio" name="yd">女
 							</div>
 						</div>
 						<input type="text" value="请输入手机号码">
@@ -680,13 +865,19 @@
 						<div class="ykm-right">
 							<div class="ykmr">
 								<div class="ykmr-left">
-									<input type="radio" name="ykmr" value="1" checked> 成人
+									<input type="radio" name="ykm" value="1" checked> 成人
 								</div>
 								<div class="ykmr-right">
-									<input type="radio" name="ykmr"> 儿童
+									<input type="radio" name="ykm"> 儿童
 								</div>
 							</div>
-							<div class="ykmr"></div>
+							<div class="ykmr">
+								<select name="" id="yuyan"> 
+									<option value="0">中文</option> 
+									<option value="1">英文</option> 
+								</select>
+								<input type="text" value="请输入姓名" id="xx"> 
+							</div>
 							<div class="ykmr">
 								<div class="ykmr-left">
 									<input type="radio" name="ykmr" value="1" checked> 男
@@ -698,7 +889,13 @@
 							<div class="ykmr">
 								<input type="text" id="input-ykmr" value="请输入手机号码">
 							</div>
-							<div class="ykmr"></div>
+							<div class="ykmr">
+								<select name="" id="zhengjian"> 
+									<option value="0">护照</option> 
+									<option value="1">军证</option> 
+								</select>
+								<input type="text" value="请输入姓名" id="yy">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -757,13 +954,20 @@
 			</div>
 			<a href="#" id="a-yq">更多要求>></a>
 			<div class="tijiao">
-				<input type="text" value="总价:">
+				<div class="tj-zongjia">
+					总价:
+					<div class="tj-num">1</div>
+				</div>
 				<div class="queren">
-					<div class="yiyuedu"><input type="checkbox" id="input-yyd">    <p>已阅读爱自驾条款，并同意</p></div>
+					<div class="yiyuedu"><input type="checkbox" id="input-yyd" checked>    <p>已阅读爱自驾条款，并同意</p></div>
 					<a href="#" id="a-yyd">确认订单并提交</a>
 				</div>
 			</div>
 		</div>
 	</div>
+	 
+	<script>
+		
+	</script>
 </body>
 </html>
