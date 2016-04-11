@@ -13,6 +13,17 @@
 		.main-inner{
 			width: 1002px;
 			margin: 0 auto;
+			position: relative;
+		}
+		.position{
+			width: 234px;
+			height: 355px;
+			padding: 18px;
+			background-color: red;
+			position: absolute;
+			top: 0;
+			right: 0;
+			border: 1px solid #66cccc;
 		}
 			.xianlu{
 				width: 1000px;
@@ -515,11 +526,62 @@
 					margin-top: 21px;
 					color: black;
 				}
+			.tijiao{
+				width: 1000px;
+				height: 302px;
+				margin-top: 48px;
+				border-top: 1px solid #999999;
+			}
+				.tijiao input{
+					display: block;
+					width: 984px;
+					height: 54px;
+					border: 3px solid #66cccc;
+					margin-top: 42px;
+					background-color: #ccffff;
+					font-size: 28px;
+					line-height: 54px;
+					padding-left: 10px;
+				}
+				.queren{
+					width: 237px;
+					height: 120px;
+					margin-top: 36px;
+					margin-left: 382px;
+				}
+					.yiyuedu{
+						width: 237px;
+						height: 42px;
+						line-height: 42px;
+						font-size: 16px;
+					}
+						#input-yyd{
+							display: block;
+							width: 16px;
+							height: 16px;
+							margin-left: 4px;
+							margin-top: 14px;
+							float: left;
+							margin-right: 18px;
+						}
+						#a-yyd{
+							display: block;
+							width: 237px;
+							height: 48px;
+							line-height: 48px;
+							font-size: 24px;
+							text-align: center;
+							text-decoration: none;
+							background-color: #66cccc;
+							color: white;
+							margin-top: 18px;
+						}
 	</style>
 </head>
 <body>
 	<div class="main">
 		<div class="main-inner">
+			<div class="position"></div>
 			<div class="xianlu">
 				<div class="xianlu-left">
 					<div class="xll-top">
@@ -589,7 +651,7 @@
 						<input type="text" value="请输入姓名">
 						<div class="lxrb-xb">
 							<div id="lxrb-nan">
-								<input type="radio" name="ydmr" value="1">男
+								<input type="radio" name="ydmr" value="1" checked>男
 							</div>
 							<div id="lxrb-nv">
 								<input type="radio" name="ydmr">女
@@ -618,7 +680,7 @@
 						<div class="ykm-right">
 							<div class="ykmr">
 								<div class="ykmr-left">
-									<input type="radio" name="ykmr" value="1"> 成人
+									<input type="radio" name="ykmr" value="1" checked> 成人
 								</div>
 								<div class="ykmr-right">
 									<input type="radio" name="ykmr"> 儿童
@@ -627,7 +689,7 @@
 							<div class="ykmr"></div>
 							<div class="ykmr">
 								<div class="ykmr-left">
-									<input type="radio" name="ykmr" value="1"> 男
+									<input type="radio" name="ykmr" value="1" checked> 男
 								</div>
 								<div class="ykmr-right">
 									<input type="radio" name="ykmr"> 女
@@ -681,7 +743,7 @@
 						<div class="ydmr-xx">
 							<div class="ydmr-shifou">是否需要发票：</div>
 							<div id="ydmr-shi">
-								<input type="radio" name="ydmr" value="1">是
+								<input type="radio" name="ydmr" value="1" checked>是
 							</div>
 							<div id="ydmr-fou">
 								<input type="radio" name="ydmr">否
@@ -692,7 +754,14 @@
 						<input type="text" id="input-dz" value="请输入配送地址">
 					</div>
 				</div>
-				<a href="#" id="a-yq">更多要求>></a>
+			</div>
+			<a href="#" id="a-yq">更多要求>></a>
+			<div class="tijiao">
+				<input type="text" value="总价:">
+				<div class="queren">
+					<div class="yiyuedu"><input type="checkbox" id="input-yyd">    <p>已阅读爱自驾条款，并同意</p></div>
+					<a href="#" id="a-yyd">确认订单并提交</a>
+				</div>
 			</div>
 		</div>
 	</div>
