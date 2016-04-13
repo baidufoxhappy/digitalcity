@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自驾团非会员注册页面</title>
+	<script src="js/jquery-1.11.1.js"></script>
+	<link rel="stylesheet" href="style/z-zc.css">
+</head>
+<body>
+	<div class="zhd">
+		<div id="z-zc-box"></div>
+	<div class="img">
+		<img src="images/z-bgi.png" alt="" id="z-zc-img">
+	</div>
+	<div id="z-zc-zhuce">
+		<div id="guanbi"></div>
+		<a href="#" id="z-zc-tel">用手机注册</a>
+		<input type="text" value="请输入邮箱" id="input-zc-yx">
+		<input type="text" value="用户名，4-16个字符，字母/中文/数字" id="input-zc-zc">
+		<input type="password" id="input-zc-sp" placeholder="设置密码">
+		<input type="password" id="input-zc-rp" placeholder="输入密码">
+		<input type="text" value="输入邀请码，可不填" id="input-zc-yz">
+		<div id="zc-zhuce">
+			<h3>注册视为同意<span>《爱自驾用户使用协议》</span></h3>
+			<a href="#" id="a-zhuce">注册</a>
+		</div>
+		<a href="#" id="a-kuaisu">快速登录></a>
+	</div>
+	</div>
+	<script>
+		$("#z-zc-box").click(function(){
+			$("#z-zc-img").css({"display":"block"});
+			$("#z-zc-zhuce").css({"display":"block"});
+			$("#guanbi").css({"display":"block"});
+		});
+		$("#guanbi").click(function(){
+			$(this).css({"display":"none"});
+			$("#z-zc-img").css({"display":"none"});
+			$("#z-zc-zhuce").css({"display":"none"});
+		});
+		var reg1=/^[0-9a-zA-Z,\u4e00-\u9fa5]*$/g
+		$("#input-zc-zc").click(function(){
+			$(this).val("");
+		})
+		$("#input-zc-zc").mouseleave(function(){
+			var val=$(this).val();
+			var x=reg1.test(val);
+			if(x){console.log("正确")}else{
+				$(this).val("格式错误！");
+			}
+		});
+		var reg2=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+		$("#input-zc-yx").click(function(){
+			$(this).val("");
+		})
+		$("#input-zc-yx").mouseleave(function(){
+			var val=$(this).val();
+			var x=reg2.test(val);
+			if(x){console.log("正确")}else{
+				$(this).val("格式错误！");
+			}
+		});
+		$("#input-zc-yz").click(function(){
+			$(this).val("")
+		})
+	</script>
+</body>
+</html>

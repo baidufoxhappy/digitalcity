@@ -123,7 +123,7 @@ height: 438px;
 .xll-top,.fy-top,.lxr-top,.yk-top,.bx-top,.yd-top{
 width: 972px;
 height: 61px;
-background-image: url(详情页/尊尼.jpg);
+background-image: url(../images/z-123.jpg);
 line-height: 61px;
 padding-left: 28px;
 font-size: 24px;
@@ -188,13 +188,13 @@ border-top: none;
 border-bottom: none;
 }
 #jia{
-background-image: url(详情页/1.jpg);
+background-image: url(../images/z-11.jpg);
 width: 43px;
 height: 27px;
 border: none;
 }
 #jian{
-background-image: url(详情页/2.jpg);
+background-image: url(../images/z-12.jpg);
 width: 43px;
 height: 27px;
 border: none;
@@ -684,7 +684,7 @@ margin-top: 42px;
 font-size: 28px;
 line-height: 54px;
 padding-left: 10px;
-background-image: url(详情页/4.jpg);
+background-image: url(../images/z-14.jpg);
 
 }
 .tj-num{
@@ -692,7 +692,7 @@ width: 24px;
 height: 26px;
 float: left;
 margin-left: 66px;
-background-image: url(详情页/5.jpg);
+background-image: url(../images/z-15.jpg);
 font-size: 24px;
 margin-top: 15px;
 text-align: center;
@@ -702,7 +702,7 @@ line-height: 26px;
 width: 70px;
 height: 28px;
 float: left;
-background-image: url(详情页/5.jpg);
+background-image: url(../images/z-15.jpg);
 font-size: 24px;
 margin-top: 12px;
 text-align: center;

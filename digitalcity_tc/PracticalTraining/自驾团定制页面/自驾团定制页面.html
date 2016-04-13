@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>自驾团定制页面</title>
-	<script src="jquery-1.11.1.js"></script>
-	<link rel="stylesheet" href="zhd-style.css">
+	<script src="js/jquery-1.11.1.js"></script>
+	<link rel="stylesheet" href="style/z-zjtdzym.css">
 	<script src="zhd-1.js"></script>
 </head>
 <body>
@@ -12,7 +12,7 @@
 		<div class="main-inner">
 			<div class="top">
 				<div class="top-zuoshang">
-					<a href="#"><img src="详情页/1.jpg" alt=""></a>
+					<a href="#"><img src="images/z-1.jpg" alt=""></a>
 					<h3>联系人信息<span>（必填）</span></h3>
 				</div>
 				<div class="top-youxia">
@@ -22,7 +22,7 @@
 					</div>
 					<div class="yx-mid">
 						<h3>手机号码</h3>
-						<input type="text" value="请输入手机号码">
+						<input type="text" value="请输入手机号码" id="zz-tel">
 					</div>
 					<div class="yx-but">
 						<h3>邮箱</h3>
@@ -32,7 +32,7 @@
 			</div>
 			<div class="mid">
 				<div class="mid-zuoshang">
-					<a href="#"><img src="详情页/尊尼.jpg" alt=""></a>
+					<a href="#"><img src="images/z-尊尼.jpg" alt=""></a>
 					<h3>基本信息<span>（必填）</span></h3>
 				</div>
 				<div class="mid-youxia">
@@ -60,7 +60,7 @@
 					<div class="tsfather">
 						<div class="tianshu">
 							<h3>游玩天数</h3>
-							<input type="text" value="请输入">
+							<input type="text" value="请输入" class="zz-num">
 						</div>
 						<h3 id="tian">天</h3>
 						<h3 id="zengjian">可适当增减天数</h3>
@@ -72,19 +72,19 @@
 						</div>
 						<div class="chengren">
 							<h3 id="chengren">成人</h3>
-							<input type="text" value="请输入儿童">
+							<input type="text" value="请输入儿童" class="zz-num">
 						</div>
 						<h3 id="ertong">儿童</h3>
 					</div>
 					<div class="yusuan">
 						<h3>人均预算</h3>
-						<input type="text" value="请填写人均预算">
+						<input type="text" value="请填写人均预算" class="zz-num">
 					</div>
 				</div>
 			</div>
 			<div class="but">
 				<div class="but-zuoshang">
-					<a href="#"><img src="详情页/3.jpg" alt=""></a>
+					<a href="#"><img src="images/z-3.jpg" alt=""></a>
 					<h3>特色服务</h3>
 				</div>
 				<div class="but-youxia">
@@ -133,23 +133,40 @@
 		});
 		$("a").click(function(){
 			return false;
-		})
-		var val = $("input").val();
-		var pattern = new RegExp("[\u4e00-\u9fa5]");
+		});
+		var reg1= /^[\u4e00-\u9fa5]*$/g
 		$(".zz-Chinese").click(function(){
 			$(this).val("");
-			$(this).mouseleave(function(){
-				var valLeave = $(".zz-Chinese").val();
-				if(valLeave == ""){
-					$(this).val("请输入内容！！！");
-				}if(valLeave == pattern){
-					$(this).val(valLeave);
-				}if(valLeave != pattern && valLeave != ""){
-					$(this).val("请输入正确内容！！！")
-				}
-			});
 		});
-
+		$(".zz-Chinese").mouseleave(function(){
+			var val=$(this).val();
+			var x=reg1.test(val);
+			if(x){console.log("正确")}else{
+				$(this).val("格式错误！");
+			}
+		});
+		var reg2= /^\d{11}$/
+		$("#zz-tel").click(function(){
+			$(this).val("");
+		});
+		$("#zz-tel").mouseleave(function(){
+			var val=$(this).val();
+			var x=reg2.test(val);
+			if(x){console.log("正确")}else{
+				$(this).val("格式错误！");
+			}
+		});
+		var reg3= /^[0-9]*$/g
+		$(".zz-num").click(function(){
+			$(this).val("");
+		});
+		$(".zz-num").mouseleave(function(){
+			var val=$(this).val();
+			var x=reg3.test(val);
+			if(x){console.log("正确")}else{
+				$(this).val("格式错误！");
+			}
+		});
 	</script>
 </body>
 </html>
