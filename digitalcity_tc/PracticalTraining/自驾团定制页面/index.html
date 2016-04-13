@@ -5,7 +5,7 @@
 	<title>自驾团定制页面</title>
 	<script src="jquery-1.11.1.js"></script>
 	<link rel="stylesheet" href="zhd-style.css">
-	
+	<script src="zhd-1.js"></script>
 </head>
 <body>
 	<div class="main">
@@ -18,7 +18,7 @@
 				<div class="top-youxia">
 					<div class="yx-top">
 						<h3>姓名</h3>
-						<input type="text" value="请输入姓名">
+						<input type="text" value="请输入姓名" class="zz-Chinese">
 					</div>
 					<div class="yx-mid">
 						<h3>手机号码</h3>
@@ -45,11 +45,11 @@
 					</div>
 					<div class="chufa">
 						<h3>出发地</h3>
-						<input type="text" value="上海">
+						<input type="text" value="上海" class="zz-Chinese">
 					</div>
 					<div class="mudi">
 						<h3>目的地</h3>
-						<input type="text" value="北京">
+						<input type="text" value="北京" class="zz-Chinese">
 					</div>
 					<div class="shijian">
 						<h3>出发日期</h3>
@@ -135,16 +135,21 @@
 			return false;
 		})
 		var val = $("input").val();
-		$("input").click(function(){
-			$(this).val("")
-		}).mouseleave(function(){
-			var valLeave = $(this).val();
-			if(valLeave == ""){
-				$(this).val("请输入内容！！！")
-			}else{
-				$(this).val(valLeave);
-			}
+		var pattern = new RegExp("[\u4e00-\u9fa5]");
+		$(".zz-Chinese").click(function(){
+			$(this).val("");
+			$(this).mouseleave(function(){
+				var valLeave = $(".zz-Chinese").val();
+				if(valLeave == ""){
+					$(this).val("请输入内容！！！");
+				}if(valLeave == pattern){
+					$(this).val(valLeave);
+				}if(valLeave != pattern && valLeave != ""){
+					$(this).val("请输入正确内容！！！")
+				}
+			});
 		});
+
 	</script>
 </body>
 </html>
